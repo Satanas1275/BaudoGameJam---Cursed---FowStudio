@@ -11,3 +11,5 @@ func _on_Button_Options_pressed():
 func _on_Button_Quitter_pressed():
 	# Ferme le jeu
 	get_tree().quit()
+
+#test2
