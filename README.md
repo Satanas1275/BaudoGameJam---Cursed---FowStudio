@@ -18,7 +18,7 @@ FraZy
 - ???
 
 Pas assigner :
-- méchant
+- ennemies
 - énigme
 - dialogue
 - salles
