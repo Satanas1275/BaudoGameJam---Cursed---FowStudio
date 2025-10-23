@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cay3vhs5icytf"]
+
+[ext_resource type="Script" uid="uid://oa6x1ips0vc7" path="res://UI/main_menu.gd" id="1_b3hcm"]
+[ext_resource type="Texture2D" uid="uid://xy1g0yisqrid" path="res://assets/textures/UI/bouton_play.png" id="2_b3hcm"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3hcm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 93.0
+offset_bottom = 116.0
+texture = ExtResource("2_b3hcm")
+expand_mode = 1
+stretch_mode = 4
