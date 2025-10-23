@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://diid1rc40lm42"]
+
+[ext_resource type="Texture2D" uid="uid://126jfi022q5g" path="res://tile_0088.png" id="1_f7ab6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_88jlj"]
+size = Vector3(1.19531, 1.52826, 0.543457)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_f7ab6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0976563, -0.00643921, -0.0256348)
+shape = SubResource("BoxShape3D_88jlj")

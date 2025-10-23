@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfr0qspobabl0"]
+[gd_scene load_steps=6 format=3 uid="uid://bfr0qspobabl0"]
 
 [ext_resource type="Script" uid="uid://oa6x1ips0vc7" path="res://UI/main_menu.gd" id="1_d8nwk"]
 [ext_resource type="Texture2D" uid="uid://cp4dx0an2b3vq" path="res://assets/textures/UI/icon.png" id="1_tk8dj"]
 [ext_resource type="Texture2D" uid="uid://b3oia22edxeuf" path="res://assets/textures/UI/main_menu_backgroung.png" id="2_d8nwk"]
+[ext_resource type="Texture2D" uid="uid://c7qouko3avpfr" path="res://assets/textures/UI/bouton_jouer.png" id="4_f40uw"]
+[ext_resource type="Texture2D" uid="uid://beamd7bfmmjku" path="res://assets/textures/UI/Bouton_quitter.png" id="5_8ctay"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,9 +20,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1.0
+offset_top = -181.0
 offset_right = 1.0
-offset_bottom = 1.0
+offset_bottom = 215.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_d8nwk")
@@ -40,26 +42,34 @@ grow_vertical = 2
 texture = ExtResource("1_tk8dj")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 476.0
-offset_top = 251.0
-offset_right = -425.0
-offset_bottom = -282.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Button_jouer" type="Button" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 234.0
+offset_right = 595.0
+offset_bottom = 407.0
 
-[node name="Button_jouer" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Jouer"
+[node name="TextureRect" type="TextureRect" parent="Button_jouer"]
+layout_mode = 0
+offset_left = -67.0
+offset_top = -75.0
+offset_right = 183.0
+offset_bottom = 213.0
+texture = ExtResource("4_f40uw")
+expand_mode = 1
 
-[node name="Button_option" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Option"
+[node name="Button_quitter" type="Button" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 236.0
+offset_right = 721.0
+offset_bottom = 405.0
 
-[node name="Button_quitter" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Quitter"
+[node name="TextureRect" type="TextureRect" parent="Button_quitter"]
+layout_mode = 0
+offset_left = -63.0
+offset_top = -77.0
+offset_right = 179.0
+offset_bottom = 211.0
+texture = ExtResource("5_8ctay")
+expand_mode = 1
