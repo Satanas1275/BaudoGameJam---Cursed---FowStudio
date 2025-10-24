@@ -10,7 +10,12 @@ config_version=5
 
 [application]
 
-config/name="BodoGameJamCursed"
+config/name="Essai pour deathrooms"
 run/main_scene="uid://bfr0qspobabl0"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

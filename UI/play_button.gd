@@ -1,5 +1,5 @@
 extends Button
 
 func _pressed():
-	# Charge ta scène de jeu
-	get_tree().change_scene_to_file("res://scenes/salle_1.tscn")
+	# Charge directement la scène 3D
+	get_tree().change_scene_to_file("res://salle_1.tscn")

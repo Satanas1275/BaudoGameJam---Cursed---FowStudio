@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kuhjlhwuvfti"
+path="res://.godot/imported/Regarde le tableau de mon petit.mp3-0998764853825da2d85794fea8cad8ea.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/doublage/Regarde le tableau de mon petit.mp3"
+dest_files=["res://.godot/imported/Regarde le tableau de mon petit.mp3-0998764853825da2d85794fea8cad8ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfwwj385pnt2v"
+path="res://.godot/imported/t'as 8 page et la couverture d'un livre a trouver.mp3-a73c2e828855114a52ced1c3fdb27ae4.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/doublage/t'as 8 page et la couverture d'un livre a trouver.mp3"
+dest_files=["res://.godot/imported/t'as 8 page et la couverture d'un livre a trouver.mp3-a73c2e828855114a52ced1c3fdb27ae4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvn3cwjlv102l"
+path="res://.godot/imported/Pas mal du tout.mp3-278a5c984e3aae72a248c44faab17d09.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/doublage/Pas mal du tout.mp3"
+dest_files=["res://.godot/imported/Pas mal du tout.mp3-278a5c984e3aae72a248c44faab17d09.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
