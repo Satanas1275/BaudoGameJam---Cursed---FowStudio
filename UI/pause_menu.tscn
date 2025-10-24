@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhpxwtbo2l4ky"]
+[gd_scene load_steps=11 format=3 uid="uid://bhpxwtbo2l4ky"]
 
 [ext_resource type="Script" uid="uid://oa6x1ips0vc7" path="res://UI/main_menu.gd" id="1_pqlge"]
-[ext_resource type="Texture2D" uid="uid://cc27shiiyf2jv" path="res://assets/textures/UI/bouton_pause.png" id="2_jfm1e"]
 [ext_resource type="Texture2D" uid="uid://b3oia22edxeuf" path="res://assets/textures/UI/main_menu_backgroung.png" id="2_nben2"]
+[ext_resource type="Texture2D" uid="uid://qvg357sd8gf3" path="res://assets/textures/UI/BOUTON_RESTER.png" id="3_mexjk"]
+[ext_resource type="Texture2D" uid="uid://btcx1emnoeole" path="res://assets/textures/UI/BOUTON_PARTIR.png" id="4_fu28r"]
 [ext_resource type="Script" uid="uid://c4e63curhycng" path="res://UI/mute_all.gd" id="4_mxjhc"]
 [ext_resource type="Texture2D" uid="uid://bgdl2t0jy2jnb" path="res://assets/textures/UI/son_on.png" id="4_pqlge"]
 [ext_resource type="Texture2D" uid="uid://b6eeug5cip5j2" path="res://assets/textures/UI/son_off.png" id="5_nben2"]
@@ -33,58 +34,93 @@ grow_vertical = 2
 texture = ExtResource("2_nben2")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 93.0
-offset_bottom = 116.0
-texture = ExtResource("2_jfm1e")
+offset_top = 299.0
+offset_right = 1153.0
+offset_bottom = 447.0
+alignment = 1
+
+[node name="rester" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "                                                 "
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/rester"]
+layout_mode = 0
+offset_left = -49.0
+offset_top = -98.0
+offset_right = 250.0
+offset_bottom = 213.0
+texture = ExtResource("3_mexjk")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="sound" type="Button" parent="."]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 219.0
-offset_right = 390.0
-offset_bottom = 308.0
-script = ExtResource("4_mxjhc")
+[node name="partir" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "                                                 "
+flat = true
 
-[node name="on_icon" type="TextureRect" parent="sound"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/partir"]
 layout_mode = 0
-offset_right = 87.0
-offset_bottom = 88.0
-texture = ExtResource("4_pqlge")
+offset_left = -49.0
+offset_top = -98.0
+offset_right = 250.0
+offset_bottom = 213.0
+texture = ExtResource("4_fu28r")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="off_icon" type="TextureRect" parent="sound"]
-layout_mode = 0
-offset_right = 87.0
-offset_bottom = 88.0
-texture = ExtResource("5_nben2")
-expand_mode = 1
-stretch_mode = 4
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_top = 598.0
+offset_right = -0.15209961
 
-[node name="music" type="Button" parent="."]
-layout_mode = 0
-offset_left = 732.0
-offset_top = 222.0
-offset_right = 826.0
-offset_bottom = 311.0
+[node name="music" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "          "
+flat = true
 script = ExtResource("7_k6dah")
 
-[node name="on_icon" type="TextureRect" parent="music"]
+[node name="on_icon" type="TextureRect" parent="HBoxContainer2/music"]
 layout_mode = 0
-offset_right = 87.0
-offset_bottom = 88.0
+offset_top = 1.0
+offset_right = 49.0
+offset_bottom = 50.0
 texture = ExtResource("6_xv4gp")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="off_icon" type="TextureRect" parent="music"]
+[node name="off_icon" type="TextureRect" parent="HBoxContainer2/music"]
 layout_mode = 0
-offset_right = 87.0
-offset_bottom = 88.0
+offset_right = 49.0
+offset_bottom = 50.0
 texture = ExtResource("7_mxjhc")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="sound" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "          "
+flat = true
+script = ExtResource("4_mxjhc")
+
+[node name="on_icon" type="TextureRect" parent="HBoxContainer2/sound"]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 46.0
+texture = ExtResource("4_pqlge")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="off_icon" type="TextureRect" parent="HBoxContainer2/sound"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 46.0
+offset_bottom = 47.0
+texture = ExtResource("5_nben2")
 expand_mode = 1
 stretch_mode = 4
