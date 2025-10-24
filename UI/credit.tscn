@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5jxshrurpxb0"]
+
+[ext_resource type="Texture2D" uid="uid://b3oia22edxeuf" path="res://assets/textures/UI/main_menu_backgroung.png" id="1_brgqr"]
+[ext_resource type="Script" uid="uid://4f8iiae1kmff" path="res://UI/credit.gd" id="1_ykhdr"]
+[ext_resource type="Texture2D" uid="uid://cp4dx0an2b3vq" path="res://assets/textures/UI/icon.png" id="2_exoo2"]
+[ext_resource type="Texture2D" uid="uid://beqx3480khl8a" path="res://assets/textures/UI/ecran_tritre_1.png" id="3_w7wdd"]
+[ext_resource type="Texture2D" uid="uid://eo71rosh2k54" path="res://assets/textures/UI/ecran_titre_2.png" id="4_ykhdr"]
+[ext_resource type="Texture2D" uid="uid://dver0nyk7wfjd" path="res://assets/textures/UI/ecran_titre_3.png" id="5_qlfym"]
+[ext_resource type="Texture2D" uid="uid://dhako5e18pat2" path="res://assets/textures/UI/ecran_titre_4.png" id="6_kv53c"]
+[ext_resource type="Texture2D" uid="uid://b8xlkttqhf0ef" path="res://assets/textures/UI/ecran_titre_5.png" id="7_wlh6w"]
+[ext_resource type="Texture2D" uid="uid://bjnh5ft5turmm" path="res://assets/textures/UI/ecran_titre_6.png" id="8_kgfiu"]
+[ext_resource type="Texture2D" uid="uid://cq80k6jr1tyes" path="res://assets/textures/UI/PETIT_FRERE.png" id="9_stcs6"]
+
+[node name="Credit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ykhdr")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+offset_right = 1.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_brgqr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91800004
+anchor_top = 0.85200006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.46398926
+offset_top = -0.0960083
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_exoo2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="credit_1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 97.0
+offset_right = -314.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_w7wdd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="credit_2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 97.0
+offset_right = -314.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ykhdr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="credit_3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 97.0
+offset_right = -314.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_qlfym")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="credit_4" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 97.0
+offset_right = -314.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_kv53c")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="credit_5" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 97.0
+offset_right = -314.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_wlh6w")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="credit_6" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 97.0
+offset_right = -314.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_kgfiu")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="credit_7" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 97.0
+offset_right = -314.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_stcs6")
+expand_mode = 1
+stretch_mode = 4
