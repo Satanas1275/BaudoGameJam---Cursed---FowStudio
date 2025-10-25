@@ -14,6 +14,15 @@ config/name="Essai pour deathrooms"
 run/main_scene="uid://bfr0qspobabl0"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+run/autoload_on_startup=true
+
+[autoload]
+
+Global="*res://script/global.gd"
+
+[editor]
+
+version_control/autoload_on_startup=true
 
 [rendering]
 

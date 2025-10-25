@@ -1,11 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpjnao45jtvkp"]
+[gd_scene load_steps=30 format=3 uid="uid://bpjnao45jtvkp"]
 
+[ext_resource type="Script" uid="uid://bga5mhxry770k" path="res://script/global.gd" id="1_aikxg"]
 [ext_resource type="PackedScene" uid="uid://diid1rc40lm42" path="res://character_body_3d.tscn" id="1_onvml"]
 [ext_resource type="ArrayMesh" uid="uid://dbo7k1vhv6hsa" path="res://cuisine.obj" id="1_rba5n"]
 [ext_resource type="PackedScene" uid="uid://dyf004awnm31g" path="res://portails.tscn" id="3_nkboe"]
 [ext_resource type="Texture2D" uid="uid://bgnisgjh88lfe" path="res://horloge.png" id="4_rgqt8"]
 [ext_resource type="ArrayMesh" uid="uid://bk2xggwlr0ijl" path="res://le canap _).obj" id="5_3cowg"]
 [ext_resource type="ArrayMesh" uid="uid://doxipvyvkq1n1" path="res://table.obj" id="6_kgo12"]
+[ext_resource type="Texture2D" uid="uid://8bt2erurb7uj" path="res://assets/textures/pages/couverture_du_livre.png" id="7_m6h4q"]
+[ext_resource type="Texture2D" uid="uid://dqv25hhjkgvc1" path="res://assets/textures/pages/page_1.png" id="8_aikxg"]
+[ext_resource type="Texture2D" uid="uid://dqfbchudjp3iq" path="res://assets/textures/pages/page_2.png" id="9_4wx1c"]
+[ext_resource type="Script" uid="uid://c04b5pvhcrx1v" path="res://script/page0.gd" id="9_wuy1k"]
+[ext_resource type="Texture2D" uid="uid://cn38hai5vwl0i" path="res://assets/textures/pages/page_3.png" id="10_wuy1k"]
+[ext_resource type="Texture2D" uid="uid://dk4g4b34s1lrc" path="res://assets/textures/pages/page_4.png" id="11_bd67v"]
+[ext_resource type="Script" uid="uid://bed7xcsjmhugf" path="res://script/page1.gd" id="11_tdlnp"]
+[ext_resource type="Texture2D" uid="uid://cfl3w5ve7nmew" path="res://assets/textures/pages/page_5.png" id="12_tdlnp"]
+[ext_resource type="Texture2D" uid="uid://bq6c7saxqx27k" path="res://assets/textures/pages/page_6.png" id="13_diesx"]
+[ext_resource type="Script" uid="uid://cjsk1kjv2d3pg" path="res://script/page2.gd" id="13_sqex1"]
+[ext_resource type="Texture2D" uid="uid://biwu5e5cie477" path="res://assets/textures/pages/page_7.png" id="14_unimb"]
+[ext_resource type="Script" uid="uid://c7qiprdrw5x2i" path="res://script/page3.gd" id="15_3c8ov"]
+[ext_resource type="Texture2D" uid="uid://b2sqd2cdjbbvb" path="res://assets/textures/pages/page_8.png" id="15_anwk2"]
+[ext_resource type="Script" uid="uid://fcmgvngbnwo6" path="res://script/page4.gd" id="17_pw2e5"]
+[ext_resource type="AudioStream" uid="uid://civmgu4grqsd7" path="res://assets/audio/doublage/Trouvé!.wav" id="18_wuy1k"]
+[ext_resource type="Script" uid="uid://b6gfoduv1d72f" path="res://script/page5.gd" id="19_ccp14"]
+[ext_resource type="Script" uid="uid://edovhfyg1ky3" path="res://script/page6.gd" id="21_fbps1"]
+[ext_resource type="Script" uid="uid://dntfrw4htbtjt" path="res://script/page7.gd" id="23_intot"]
+[ext_resource type="Script" uid="uid://bgdx3wjyhn61b" path="res://script/page8.gd" id="25_stokt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w7pbc"]
 size = Vector3(10, 0.1, 10)
@@ -13,8 +33,12 @@ size = Vector3(10, 0.1, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mppfm"]
 size = Vector3(3.18877, 1.48699, 9.51044)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4wx1c"]
+size = Vector3(1, 0.8914795, 1)
+
 [node name="Salle 1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0193264, 0)
+script = ExtResource("1_aikxg")
 
 [node name="sol1" type="StaticBody3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.224899, -1.51224, 0.276646)
@@ -118,3 +142,138 @@ mesh = ExtResource("5_3cowg")
 [node name="Table" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67197, -1.1935, 7.06389)
 mesh = ExtResource("6_kgo12")
+
+[node name="Page0" type="Area3D" parent="."]
+transform = Transform3D(0.019230623, 0, 0, 0, 0.99999994, 0.8042157, 0, -1.1920929e-07, 1.550005, 20.628443, 1.0803342e-07, -0.2002213)
+script = ExtResource("9_wuy1k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Page0"]
+transform = Transform3D(71.679085, 0, 0, 0, 2.9432075, -2.2649765e-06, 0, 8.6686214e-13, 1.2343739, 37.041504, -0.5680025, 0.63881093)
+shape = SubResource("BoxShape3D_4wx1c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Page0"]
+stream = ExtResource("18_wuy1k")
+
+[node name="Page" type="Sprite3D" parent="Page0"]
+transform = Transform3D(15.854548, 0, 0, 0, 0.3331137, -0.518847, 0, 2.5619435e-08, 0.64515895, 43.12497, -0.6758528, 0.45716554)
+texture = ExtResource("7_m6h4q")
+
+[node name="Page1" type="Area3D" parent="."]
+transform = Transform3D(0.012199778, -0.77300864, -0.6242171, 0, -0.0021294774, 1.5482892, -0.014865473, -0.6343918, -0.5122817, 9.093224, -1.9557972, 15.239251)
+script = ExtResource("11_tdlnp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Page1"]
+transform = Transform3D(71.679085, 0, 0, 0, 2.9432075, -2.2649765e-06, 0, 8.6686214e-13, 1.2343739, 37.041504, -0.5680025, 0.63881093)
+shape = SubResource("BoxShape3D_4wx1c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Page1"]
+stream = ExtResource("18_wuy1k")
+
+[node name="Page" type="Sprite3D" parent="Page1"]
+transform = Transform3D(15.854548, 0, 0, 0, 0.3331137, -0.518847, 0, 2.5619435e-08, 0.64515895, 43.12497, -0.6758528, 0.45716554)
+texture = ExtResource("8_aikxg")
+
+[node name="Page2" type="Area3D" parent="."]
+transform = Transform3D(0.019230623, 0, 0, 0, 0.99999994, 0.8042157, 0, -1.1920929e-07, 1.550005, -8.095829, 1.0617077e-06, 2.7683012)
+script = ExtResource("13_sqex1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Page2"]
+transform = Transform3D(71.679085, 0, 0, 0, 2.9432075, -2.2649765e-06, 0, 8.6686214e-13, 1.2343739, 37.041504, -0.5680025, 0.63881093)
+shape = SubResource("BoxShape3D_4wx1c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Page2"]
+stream = ExtResource("18_wuy1k")
+
+[node name="Page" type="Sprite3D" parent="Page2"]
+transform = Transform3D(15.854548, 0, 0, 0, 0.3331137, -0.518847, 0, 2.5619435e-08, 0.64515895, 43.12497, -0.6758528, 0.45716554)
+texture = ExtResource("9_4wx1c")
+
+[node name="Page3" type="Area3D" parent="."]
+transform = Transform3D(0.019230623, 0, 0, 0, 0.99999994, 0.8042157, 0, -1.1920929e-07, 1.550005, -22.479828, -3.6880374e-07, -24.589636)
+script = ExtResource("15_3c8ov")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Page3"]
+transform = Transform3D(71.679085, 0, 0, 0, 2.9432075, -2.2649765e-06, 0, 8.6686214e-13, 1.2343739, 37.041504, -0.5680025, 0.63881093)
+shape = SubResource("BoxShape3D_4wx1c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Page3"]
+stream = ExtResource("18_wuy1k")
+
+[node name="Page" type="Sprite3D" parent="Page3"]
+transform = Transform3D(15.854548, 0, 0, 0, 0.3331137, -0.518847, 0, 2.5619435e-08, 0.64515895, 43.12497, -0.6758528, 0.45716554)
+texture = ExtResource("10_wuy1k")
+
+[node name="Page4" type="Area3D" parent="."]
+transform = Transform3D(-0.015853208, 0.5660388, 0.45979595, 0, -0.005218644, 1.5457871, 0.010885429, 0.82436186, 0.669633, -7.996169, -1.9630644, 16.986889)
+script = ExtResource("17_pw2e5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Page4"]
+transform = Transform3D(71.679085, 0, 0, 0, 2.9432075, -2.2649765e-06, 0, 8.6686214e-13, 1.2343739, 37.041504, -0.5680025, 0.63881093)
+shape = SubResource("BoxShape3D_4wx1c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Page4"]
+stream = ExtResource("18_wuy1k")
+
+[node name="Page" type="Sprite3D" parent="Page4"]
+transform = Transform3D(15.854548, 0, 0, 0, 0.3331137, -0.518847, 0, 2.5619435e-08, 0.64515895, 43.12497, -0.6758528, 0.45716554)
+texture = ExtResource("11_bd67v")
+
+[node name="Page5" type="Area3D" parent="."]
+transform = Transform3D(0.0071232445, -0.92886746, -0.74638164, 0, 0.0004362623, 1.5503559, -0.017862704, -0.37041146, -0.2976403, -22.301416, -1.9668279, 2.6038883)
+script = ExtResource("19_ccp14")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Page5"]
+transform = Transform3D(71.679085, 0, 0, 0, 2.9432075, -2.2649765e-06, 0, 8.6686214e-13, 1.2343739, 37.041504, -0.5680025, 0.63881093)
+shape = SubResource("BoxShape3D_4wx1c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Page5"]
+stream = ExtResource("18_wuy1k")
+
+[node name="Page" type="Sprite3D" parent="Page5"]
+transform = Transform3D(15.854548, 0, 0, 0, 0.3331137, -0.518847, 0, 2.5619435e-08, 0.64515895, 43.12497, -0.6758528, 0.45716554)
+texture = ExtResource("12_tdlnp")
+
+[node name="Page6" type="Area3D" parent="."]
+transform = Transform3D(0.001250521, 0.47042677, -0.9857415, -0.0006666507, 0.88243884, 1.4368525, 0.019178335, -8.784622e-09, 0.11422103, 22.714296, -0.41251528, 16.508516)
+script = ExtResource("21_fbps1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Page6"]
+transform = Transform3D(71.679085, 0, 0, 0, 2.9432075, -2.2649765e-06, 0, 8.6686214e-13, 1.2343739, 37.041504, -0.5680025, 0.63881093)
+shape = SubResource("BoxShape3D_4wx1c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Page6"]
+stream = ExtResource("18_wuy1k")
+
+[node name="Page" type="Sprite3D" parent="Page6"]
+transform = Transform3D(15.854548, 0, 0, 0, 0.3331137, -0.518847, 0, 2.5619435e-08, 0.64515895, 43.12497, -0.6758528, 0.45716554)
+texture = ExtResource("13_diesx")
+
+[node name="Page7" type="Area3D" parent="."]
+transform = Transform3D(0.019230621, 0, 0, 0, 0.7488052, 1.6295288, 0, -0.6627899, 0.627626, 3.2320251, -0.77671814, -0.005426407)
+script = ExtResource("23_intot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Page7"]
+transform = Transform3D(71.679085, 0, 0, 0, 2.9432075, -2.2649765e-06, 0, 8.6686214e-13, 1.2343739, 37.041504, -0.5680025, 0.63881093)
+shape = SubResource("BoxShape3D_4wx1c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Page7"]
+stream = ExtResource("18_wuy1k")
+
+[node name="Page" type="Sprite3D" parent="Page7"]
+transform = Transform3D(15.854548, 0, 0, 0, 0.3331137, -0.518847, 0, 2.5619435e-08, 0.64515895, 43.12497, -0.6758528, 0.45716554)
+texture = ExtResource("14_unimb")
+
+[node name="Page8" type="Area3D" parent="."]
+transform = Transform3D(0.25572243, 0, 0, 0, 0.99999994, 0.8042157, 0, -1.1920929e-07, 1.550005, -8.661737, 1.0617077e-06, -23.474514)
+script = ExtResource("25_stokt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Page8"]
+transform = Transform3D(4.6800623, 0, 0, 0, 2.9432087, -1.9669533e-06, 0, 8.526513e-13, 1.2343739, 3.4318132, -0.5680027, 0.638811)
+shape = SubResource("BoxShape3D_4wx1c")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Page8"]
+stream = ExtResource("18_wuy1k")
+
+[node name="Page" type="Sprite3D" parent="Page8"]
+transform = Transform3D(1.1409385, 0, 0, 0, 0.3744324, 0.07577342, 0, -0.11158321, 0.5513847, 3.6632047, -0.82323563, 0.45716572)
+texture = ExtResource("15_anwk2")
