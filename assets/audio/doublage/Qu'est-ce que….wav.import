@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://doh1kpexwfejj"
+path="res://.godot/imported/Qu'est-ce que….wav-c67ea62dbf1031eead3554673de32883.sample"
+
+[deps]
+
+source_file="res://assets/audio/doublage/Qu'est-ce que….wav"
+dest_files=["res://.godot/imported/Qu'est-ce que….wav-c67ea62dbf1031eead3554673de32883.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

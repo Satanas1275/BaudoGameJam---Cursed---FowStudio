@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgrs5l67m8u4t"
+path="res://.godot/imported/Moi aussi je m'ennuie.wav-1ecbc2e0a8bfb2391219feeb5b5e4cb7.sample"
+
+[deps]
+
+source_file="res://assets/audio/doublage/Moi aussi je m'ennuie.wav"
+dest_files=["res://.godot/imported/Moi aussi je m'ennuie.wav-1ecbc2e0a8bfb2391219feeb5b5e4cb7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
