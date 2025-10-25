@@ -1,14 +1,21 @@
 extends Area3D
 
-@export var target_portal : Node3D  # Référence au portail de destination
-@onready var player = $CharacterBody3D # Référence au joueur
+@export var target_portal : Node3D
+var can_teleport = true
 
-# Quand le joueur entre dans la zone de collision
-func _on_portal_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):  # Vérifie si c'est le joueur
+func _on_area_3d_body_entered(body):
+	print("Body entered:", body.name)
+	if can_teleport and body.is_in_group("player"):
+		print("C’est bien le joueur, on le téléporte")
+		can_teleport = false
 		teleport_player(body)
+		await get_tree().create_timer(0.5).timeout
+		can_teleport = true
 
-# Fonction de téléportation du joueur
 func teleport_player(player: Node) -> void:
-	# Positionne le joueur à la position du portail cible
-	player.global_position = $"../../Node3D".global_position
+	if target_portal:
+		print("Téléportation vers :", target_portal.name)
+		player.global_transform.origin = target_portal.global_transform.origin
+		player.velocity = Vector3.ZERO
+	else:
+		print("Erreur : target_portal n’est pas assigné !")

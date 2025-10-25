@@ -18,6 +18,11 @@ func _on_body_entered(body):
 
 	play_random_sound()
 
+	# Vérifie si toutes les pages sont trouvées
+	if Global.pages_trouvees.size() >= 9:
+		await get_tree().create_timer(0.5).timeout  # petit délai pour laisser le son se lancer
+		get_tree().change_scene_to_file("res://UI/cinematique2.tscn")
+
 	# Supprime la page après le son
 	await get_tree().create_timer(1).timeout
 	queue_free()

@@ -1,11 +1,60 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyf004awnm31g"]
+[gd_scene load_steps=6 format=3 uid="uid://dyf004awnm31g"]
 
 [ext_resource type="Texture2D" uid="uid://b84rex3cefn2l" path="res://portail_bleu.png" id="1_jfd1h"]
-[ext_resource type="Script" path="res://area_3d.gd" id="1_ma543"]
 [ext_resource type="Texture2D" uid="uid://bgldae4r7s5oj" path="res://portail_orange.png" id="3_ekad4"]
+
+[sub_resource type="GDScript" id="GDScript_ucixu"]
+script/source = "extends Area3D
+
+@export var target_portal : Node3D
+var can_teleport = true
+
+func _on_area_3d_body_entered(body):
+	print(\"Body entered:\", body.name)
+	if can_teleport and body.is_in_group(\"player\"):
+		print(\"C’est bien le joueur, on le téléporte\")
+		can_teleport = false
+		teleport_player(body)
+		await get_tree().create_timer(0.5).timeout
+		can_teleport = true
+
+func teleport_player(player: Node) -> void:
+	if target_portal:
+		print(\"Téléportation vers :\", target_portal.name)
+		player.global_transform.origin = target_portal.global_transform.origin
+		player.velocity = Vector3.ZERO
+	else:
+		print(\"Erreur : target_portal n’est pas assigné !\")
+
+"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n0fdl"]
 size = Vector3(1, 1, 0.258698)
+
+[sub_resource type="GDScript" id="GDScript_6a3ix"]
+script/source = "extends Area3D
+
+@export var target_portal : Node3D
+var can_teleport = true
+
+func _on_area_3d_body_entered(body):
+	print(\"Body entered:\", body.name)
+	if can_teleport and body.is_in_group(\"player\"):
+		print(\"C’est bien le joueur, on le téléporte\")
+		can_teleport = false
+		teleport_player(body)
+		await get_tree().create_timer(0.5).timeout
+		can_teleport = true
+
+func teleport_player(player: Node) -> void:
+	if target_portal:
+		print(\"Téléportation vers :\", target_portal.name)
+		player.global_transform.origin = target_portal.global_transform.origin
+		player.velocity = Vector3.ZERO
+	else:
+		print(\"Erreur : target_portal n’est pas assigné !\")
+
+"
 
 [node name="Portails" type="Node3D"]
 
@@ -15,8 +64,9 @@ size = Vector3(1, 1, 0.258698)
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 texture = ExtResource("1_jfd1h")
 
-[node name="Area3D" type="Area3D" parent="Portail_1"]
-script = ExtResource("1_ma543")
+[node name="Area3D" type="Area3D" parent="Portail_1" node_paths=PackedStringArray("target_portal")]
+script = SubResource("GDScript_ucixu")
+target_portal = NodePath("../../Portail_2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Portail_1/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0694641, 0.000473022)
@@ -30,7 +80,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 texture = ExtResource("3_ekad4")
 
 [node name="Area3D" type="Area3D" parent="Portail_2"]
-script = ExtResource("1_ma543")
+script = SubResource("GDScript_6a3ix")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Portail_2/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0694641, 0.000473022)

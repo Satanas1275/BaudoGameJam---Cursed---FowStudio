@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var page_index: int = 6  # Numéro de la page (0 à 8)
+@export var page_index: int = 0  # Numéro de la page (0 à 8)
 @onready var audio_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 func _ready():
@@ -18,9 +18,14 @@ func _on_body_entered(body):
 
 	play_random_sound()
 
-	# Supprime la page après le son
-	await get_tree().create_timer(1).timeout
-	queue_free()
+	if Global.pages_trouvees.size() >= 6:
+		# Délai pour laisser le son se lancer
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://UI/cinematique2.tscn")
+	else:
+		# Supprime la page après 1 seconde si ce n'est pas la dernière
+		await get_tree().create_timer(1.0).timeout
+		queue_free()
 
 func play_random_sound():
 	var random_id = randi_range(1, 4)

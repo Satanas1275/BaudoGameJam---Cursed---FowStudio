@@ -10,18 +10,15 @@ func _ready():
 	add_to_group("player")
 	
 func _process(delta):
-	# Retour au menu si Échap
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene("/UI/main_menu.tscn")
-
-	# Ton code existant...
+	# Si on appuie sur "ui_down" => caméra devant (le joueur recule)
 	if Input.is_action_pressed("ui_down"):
 		update_camera_position(false)
 	else:
+		# Quand on relâche "ui_down" => caméra revient derrière
 		update_camera_position(true)
 
+	# Gérer les animations en fonction du mouvement
 	handle_animations()
-
 
 func update_camera_position(behind: bool):
 	var offset = Vector3(0, 2, camera_distance if behind else -camera_distance)
@@ -62,7 +59,3 @@ func handle_animations():
 		# Animation de marche (avant ou arrière)
 		if animated_sprite.animation != "marche":
 			animated_sprite.play("marche")
-
-func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		get_tree().change_scene_to_file("res://UI/main_menu.tscn")

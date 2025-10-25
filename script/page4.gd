@@ -18,9 +18,14 @@ func _on_body_entered(body):
 
 	play_random_sound()
 
-	# Supprime la page après le son
-	await get_tree().create_timer(1).timeout
-	queue_free()
+	if Global.pages_trouvees.size() >= 9:
+		# Délai pour laisser le son se lancer
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://UI/cinematique2.tscn")
+	else:
+		# Supprime la page après 1 seconde si ce n'est pas la dernière
+		await get_tree().create_timer(1.0).timeout
+		queue_free()
 
 func play_random_sound():
 	var random_id = randi_range(1, 4)

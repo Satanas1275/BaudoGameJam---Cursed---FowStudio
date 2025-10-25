@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://c205b0yiebaf7"]
+
+[ext_resource type="Script" uid="uid://c20clyxvd6cg1" path="res://UI/cinematique2.gd" id="1_tmh42"]
+[ext_resource type="Texture2D" uid="uid://tcj3gq73qh2c" path="res://assets/textures/cinematique/01.png" id="2_dbfje"]
+[ext_resource type="Script" uid="uid://c3xd2k5n6br73" path="res://UI/button-cine-1.gd" id="3_tedgk"]
+[ext_resource type="Script" uid="uid://bmb1ogjo3g4at" path="res://UI/button-cine-2.gd" id="4_pdlpb"]
+[ext_resource type="Script" uid="uid://ddropbhoaeoq2" path="res://UI/button-cine-3.gd" id="5_4mbml"]
+[ext_resource type="Texture2D" uid="uid://cve0tg2a78g3x" path="res://assets/textures/UI/ECRAN_DE_MORT.png" id="6_pdlpb"]
+
+[node name="cinematique2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tmh42")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_right = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dbfje")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 315.0
+offset_top = 42.0
+offset_right = -263.0
+offset_bottom = -543.0
+text = "Y a pas la 2eme couverture ducoup ma vie n'est pas fini ???"
+script = ExtResource("3_tedgk")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 313.0
+offset_top = 137.0
+offset_right = -261.0
+offset_bottom = -448.0
+text = "C'est vrai moi aussi je m'enuie, les pages sont aussi vide que ma vie"
+script = ExtResource("4_pdlpb")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 311.0
+offset_top = 229.0
+offset_right = -263.0
+offset_bottom = -356.0
+text = "quesque tu veut que j'en tire de tout fasson tu t'en fou"
+script = ExtResource("5_4mbml")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -241.0
+offset_right = -3.0
+offset_bottom = 287.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_pdlpb")
+expand_mode = 1
+stretch_mode = 4
